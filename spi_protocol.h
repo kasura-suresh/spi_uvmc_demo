@@ -30,6 +30,7 @@ SC_MODULE(SPI_Master) //SPI_Master Module
     LOG() << "Master has initially " << data_host_master.num_available() << " data to send" << endl;
     if (data_host_master.num_available() == 0)
       wait(data_host_master.data_written_event());
+    LOG() << "Master has " << data_host_master.num_available() << " data after fifo first write" << endl;
     wait(1, SC_NS);
     LOG() << "Master has " << data_host_master.num_available() << " data to send" << endl;
     while(data_host_master.num_available() > 0) 

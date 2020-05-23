@@ -64,7 +64,9 @@ class uvmc_host extends uvm_component;
          i++;
        end
 		
-		phase.drop_objection(this);
+        #(delay.get_abstime(1e-9));
+        #(delay.get_abstime(1e-9));
+	    phase.drop_objection(this);
 		
 	endtask
 endclass
